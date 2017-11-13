@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 
-  s.name         = "SRSimpleVideoEncoder.podspec"
+  s.name         = "SRSimpleVideoEncoder"
   s.version      = "1.0"
   s.summary      = "A library for encoding NSArray<UIImage*>* to video"
 
