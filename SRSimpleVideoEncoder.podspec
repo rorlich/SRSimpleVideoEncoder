@@ -4,9 +4,7 @@ Pod::Spec.new do |s|
   s.version      = "1.0"
   s.summary      = "A library for encoding NSArray<UIImage*>* to video"
 
-  s.description  = <<-DESC
-                   SRSimpleVideoEncoder  provides an easy-to-use tool for encoding UIImages array.
-
+  s.description  = "SRSimpleVideoEncoder  provides an easy-to-use tool for encoding UIImages array."
 
   s.homepage     = "https://github.com/Visualead/SRSimpleVideoEncoder.git"
 
