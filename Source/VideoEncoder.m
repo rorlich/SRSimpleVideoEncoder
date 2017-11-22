@@ -66,7 +66,7 @@
     NSParameterAssert(videoWriter);
     
     NSDictionary *videoSettings = [NSDictionary dictionaryWithObjectsAndKeys:
-                                   AVVideoCodecTypeH264, AVVideoCodecKey,
+                                   AVVideoCodecH264, AVVideoCodecKey,
                                    [NSNumber numberWithInt:imageSize.width], AVVideoWidthKey,
                                    [NSNumber numberWithInt:imageSize.height], AVVideoHeightKey,
                                    nil];
