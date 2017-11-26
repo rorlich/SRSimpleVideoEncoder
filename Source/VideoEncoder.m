@@ -132,6 +132,7 @@
         if (!append_ok) {
             printf("error appending image %d times %d\n, with error.", frameCount, j);
         }
+        CVPixelBufferRelease(buffer);
         frameCount++;
     }
     NSLog(@"**************************************************");
@@ -141,53 +142,6 @@
     [videoWriter finishWriting];
     NSLog(@"Write Ended");
         
-    ////////////////////////////////////////////////////////////////////////////
-    //////////////  OK now add an audio file to move file  /////////////////////
-//    AVMutableComposition* mixComposition = [AVMutableComposition composition];
-//
-//    NSString *bundleDirectory = [[NSBundle mainBundle] bundlePath];
-//    // audio input file...
-//    NSString *audio_inputFilePath = [bundleDirectory stringByAppendingPathComponent:@"30secs.mp3"];
-//    NSURL    *audio_inputFileUrl = [NSURL fileURLWithPath:audio_inputFilePath];
-//
-//    // this is the video file that was just written above, full path to file is in --> videoOutputPath
-//    NSURL    *video_inputFileUrl = [NSURL fileURLWithPath:outputPath];
-//
-//    // create the final video output file as MOV file - may need to be MP4, but this works so far...
-//    NSString *outputFilePath = [documentsDirectory stringByAppendingPathComponent:@"final_video.mp4"];
-//    NSURL    *outputFileUrl = [NSURL fileURLWithPath:outputFilePath];
-//
-//    if ([[NSFileManager defaultManager] fileExistsAtPath:outputFilePath])
-//        [[NSFileManager defaultManager] removeItemAtPath:outputFilePath error:nil];
-//
-//    CMTime nextClipStartTime = kCMTimeZero;
-//
-//    AVURLAsset* videoAsset = [[AVURLAsset alloc]initWithURL:video_inputFileUrl options:nil];
-//    CMTimeRange video_timeRange = CMTimeRangeMake(kCMTimeZero,videoAsset.duration);
-//    AVMutableCompositionTrack *a_compositionVideoTrack = [mixComposition addMutableTrackWithMediaType:AVMediaTypeVideo preferredTrackID:kCMPersistentTrackID_Invalid];
-//    [a_compositionVideoTrack insertTimeRange:video_timeRange ofTrack:[[videoAsset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0] atTime:nextClipStartTime error:nil];
-//
-//    //nextClipStartTime = CMTimeAdd(nextClipStartTime, a_timeRange.duration);
-//
-//    AVURLAsset* audioAsset = [[AVURLAsset alloc]initWithURL:audio_inputFileUrl options:nil];
-//    CMTimeRange audio_timeRange = CMTimeRangeMake(kCMTimeZero, audioAsset.duration);
-//    AVMutableCompositionTrack *b_compositionAudioTrack = [mixComposition addMutableTrackWithMediaType:AVMediaTypeAudio preferredTrackID:kCMPersistentTrackID_Invalid];
-//    [b_compositionAudioTrack insertTimeRange:audio_timeRange ofTrack:[[audioAsset tracksWithMediaType:AVMediaTypeAudio] objectAtIndex:0] atTime:nextClipStartTime error:nil];
-    
-    
-    
-//    AVAssetExportSession* _assetExport = [[AVAssetExportSession alloc] initWithAsset:mixComposition presetName:AVAssetExportPresetHighestQuality];
-//    //_assetExport.outputFileType = @"com.apple.quicktime-movie";
-//    _assetExport.outputFileType = @"public.mpeg-4";
-//    //NSLog(@"support file types= %@", [_assetExport supportedFileTypes]);
-//    _assetExport.outputURL = outputFileUrl;
-//
-//    [_assetExport exportAsynchronouslyWithCompletionHandler:
-//     ^(void ) {
-//         //[self saveVideoToAlbum:outputFilePath];
-//     }
-//     ];
-//
     ///// THAT IS IT DONE... the final video file will be written here...
     NSLog(@"DONE.....outputFilePath--->%@", outputPath);
 }
