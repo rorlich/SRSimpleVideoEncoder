@@ -132,7 +132,7 @@
         if (!append_ok) {
             printf("error appending image %d times %d\n, with error.", frameCount, j);
         }
-        CVPixelBufferRelease(buffer)
+        CVPixelBufferRelease(buffer);
         frameCount++;
     }
     NSLog(@"**************************************************");
