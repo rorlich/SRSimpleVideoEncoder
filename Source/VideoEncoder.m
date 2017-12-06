@@ -44,7 +44,7 @@
     UIImage* firstFrame = [UIImage imageWithContentsOfFile:[framesPaths firstObject]];
     
     // ---------- Rotate frame ----------- //
-    firstFrame = [VideoEncoder rotateUIImage:(firstFrame)];
+    //firstFrame = [VideoEncoder rotateUIImage:(firstFrame)];
     // ---------- Rotation ended ----------- //
     
     CGSize imageSize = CGSizeMake(CGImageGetWidth(firstFrame.CGImage),CGImageGetHeight(firstFrame.CGImage));
@@ -102,7 +102,7 @@
     {
         UIImage* img = [UIImage imageWithContentsOfFile:framePath];
         // ---------- Rotate frame ----------- //
-        img = [VideoEncoder rotateUIImage:(img)];
+        //img = [VideoEncoder rotateUIImage:(img)];
         // ---------- Rotation ended ----------- //
         buffer = [VideoEncoder pixelBufferFromCGImage:[img CGImage]];
         
